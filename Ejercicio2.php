@@ -18,34 +18,52 @@
     }
 
     class Compactos extends Auto{
-        public $cantPasajeros;
+        protected $cantPasajeros;
         function __construct($numeroSerieMotor,$marca,$año,$precio,$cantPasajeros)
         {
             parent::__construct($numeroSerieMotor,$marca,$año,$precio);
             $this->cantPasajeros = $cantPasajeros;
         }
+        public function getCantPasajeros(){
+            return $this->cantPasajeros;
+        }
+        public function setCantPasajeros($value){
+            $this->cantPasajeros=$value;
+        }
         function Imprimir(){
-            print("\nEl auto es de la marca: ".$this->marca."\nEl numero de serie del motor es: ".$this->numeroSerieMotor."\nEs del año: ".$this->año."\nY su precio es de $".$this->precio."\nSu cantidad para pasajeros es: ".$this->cantPasajeros);
+            print("\nEl auto es de la marca: ".$this->marca."\nEl numero de serie del motor es: ".$this->numeroSerieMotor."\nEs del año: ".$this->año."\nY su precio es de $".$this->precio."\nSu cantidad para pasajeros es: ".$this->getCantPasajeros());
         }
     }
 
     class AutosLujos extends Auto{
-        public $cantPasajeros;
-        public $extra;
+        protected $cantPasajeros;
+        protected $extra;
         function __construct($numeroSerieMotor,$marca,$año,$precio,$cantPasajeros,$extra)
         {
             parent::__construct($numeroSerieMotor,$marca,$año,$precio);
             $this->cantPasajeros = $cantPasajeros;
             $this->extra = $extra;
         }
+        public function getCantPasajeros(){
+            return $this->cantPasajeros;
+        }
+        public function setCantPasajeros($value){
+            $this->cantPasajeros=$value;
+        }
+        public function getExtra(){
+            return $this->extra;
+        }
+        public function setExtra($value){
+            $this->extra=$value;
+        }
         function Imprimir(){
-            print("\nEl auto es de la marca: ".$this->marca."\nEl numero de serie del motor es: ".$this->numeroSerieMotor."\nEs del año: ".$this->año."\nY su precio es de $".$this->precio."\nSu cantidad para pasajeros es: ".$this->cantPasajeros."\nY cuenta con ".$this->extra);
+            print("\nEl auto es de la marca: ".$this->marca."\nEl numero de serie del motor es: ".$this->numeroSerieMotor."\nEs del año: ".$this->año."\nY su precio es de $".$this->precio."\nSu cantidad para pasajeros es: ".$this->getCantPasajeros()."\nY cuenta con ".$this->getExtra());
         }
     }
 
     class Camionetas extends Auto{
-        public $kgsCarga;
-        public $traccion;
+        protected $kgsCarga;
+        protected $traccion;
         function __construct($numeroSerieMotor,$marca,$año,$precio,$kgsCarga,$traccion)
         {
             parent::__construct($numeroSerieMotor,$marca,$año,$precio);
@@ -53,8 +71,20 @@
             $this->traccion=$traccion;
             
         }
+        public function getKgsCarga(){
+            return $this->kgsCarga;
+        }
+        public function setKgsCarga($value){
+            $this->kgsCarga=$value;
+        }
+        public function getTraccion(){
+            return $this->traccion;
+        }
+        public function setTraccion($value){
+            $this->traccion=$value;
+        }
         function Imprimir(){
-            print("\nEl auto es de la marca: ".$this->marca."\nEl numero de serie del motor es: ".$this->numeroSerieMotor."\nEs del año: ".$this->año."\nY su precio es de $".$this->precio."\nSu traccion es: ".$this->traccion."\nY la cantidad de Kgs que soporta es de ".$this->kgsCarga."Kgs");
+            print("\nEl auto es de la marca: ".$this->marca."\nEl numero de serie del motor es: ".$this->numeroSerieMotor."\nEs del año: ".$this->año."\nY su precio es de $".$this->precio."\nSu traccion es: ".$this->getTraccion()."\nY la cantidad de Kgs que soporta es de ".$this->getKgsCarga()."Kgs");
         }
     }
     echo "----------------------------Autos----------------------------";
